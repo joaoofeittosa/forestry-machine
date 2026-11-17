@@ -1,4 +1,4 @@
-#include "ruinas/Personagem.h"
+#include "Personagem.h"
 
 
 namespace ruinas {

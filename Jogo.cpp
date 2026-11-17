@@ -1,6 +1,6 @@
 #pragma once
-#include "ruinas/Gerenciador_Grafico.h"
-#include "ruinas/Jogador.h"
+#include "Gerenciador_Grafico.h"
+#include "Jogador.h"
 
 
 namespace ruinas {

@@ -1,5 +1,5 @@
 #pragma once
-#include "ruinas/Ente.h"
+#include "Ente.h"
 #include <fstream>
 
 

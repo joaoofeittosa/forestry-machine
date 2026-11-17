@@ -1,5 +1,5 @@
 #pragma once
-#include "ruinas/Entidade.h"
+#include "Entidade.h"
 
 
 namespace ruinas {

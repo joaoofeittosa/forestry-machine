@@ -18,8 +18,8 @@ void Entity::damage(int amount)
 }*/
 
 
-#include "ruinas/Ente.h"
-#include "ruinas/Gerenciador_Grafico.h"
+#include "Ente.h"
+#include "Gerenciador_Grafico.h"
 
 
 namespace ruinas {

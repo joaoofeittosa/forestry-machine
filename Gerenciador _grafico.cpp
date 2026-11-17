@@ -1,5 +1,5 @@
-#include "ruinas/Gerenciador_Grafico.h"
-#include "ruinas/Ente.h"
+#include "Gerenciador_Grafico.h"
+#include "Ente.h"
 
 
 namespace ruinas {

@@ -1,4 +1,4 @@
-#include "ruinas/Jogo.h"
+#include "Jogo.h"
 
 
 namespace ruinas {
