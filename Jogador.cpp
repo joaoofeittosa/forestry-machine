@@ -1,4 +1,5 @@
-#include "Jogo.h"
+#include "Jogo.hpp"
+#include "Ente.hpp"
 
 
 namespace forestry {

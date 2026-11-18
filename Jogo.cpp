@@ -1,5 +1,5 @@
 #pragma once
-#include "Gerenciador_Grafico.h"
+#include "Gerenciador_Grafico.hpp"
 #include "Jogador.h"
 
 

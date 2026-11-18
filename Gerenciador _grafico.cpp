@@ -1,5 +1,5 @@
-#include "Gerenciador_Grafico.h"
-#include "Ente.h"
+#include "Gerenciador_Grafico.hpp"
+#include "Ente.hpp"
 
 
 namespace forestry {

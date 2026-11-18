@@ -18,8 +18,8 @@ void Entity::damage(int amount)
 }*/
 
 
-#include "Ente.h"
-#include "Gerenciador_Grafico.h"
+#include "Ente.hpp"
+#include "Gerenciador_Grafico.hpp"
 
 
 namespace forestry{
