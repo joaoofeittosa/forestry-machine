@@ -1,6 +1,6 @@
 #pragma once
-#include "Lista.h"
-#include "Entidade.h"
+#include "Lista.hpp"
+#include "Entidade.hpp"
 
 class ListaEntidades {
 private:
