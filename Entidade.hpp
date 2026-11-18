@@ -1,6 +1,8 @@
 #pragma once
 #include "Ente.hpp"
 #include <fstream>
+#ifndef ENTIDADE_HPP
+#define ENTIDADE_HPP
 
 
 namespace forestry {
@@ -34,3 +36,4 @@ public:
 
 }
 
+#endif

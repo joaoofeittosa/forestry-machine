@@ -1,5 +1,7 @@
 #pragma once
 #include "Elemento.hpp"
+#ifndef LISTA_HPP
+#define LISTA_HPP
 
 template <class TL>
 class Lista {
@@ -63,3 +65,5 @@ public:
 
     Elemento<TL>* getPrimeiro() const { return pPrimeiro; }
 };
+
+#endif

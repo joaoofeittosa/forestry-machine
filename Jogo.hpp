@@ -1,6 +1,8 @@
 #pragma once
 #include "Gerenciador_grafico.hpp"
 #include "Jogador.hpp"
+#ifndef JOGO_HPP
+#define JOGO_HPP
 
 
 namespace forestry {
@@ -23,3 +25,4 @@ public:
 
 }
 
+#endif

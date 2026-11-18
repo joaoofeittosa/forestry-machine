@@ -39,6 +39,8 @@ protected:
 
 #pragma once
 #include <SFML/Graphics.hpp>
+#ifndef ENTE_HPP
+#define ENTE_HPP
 
 
 namespace forestry {
@@ -71,4 +73,6 @@ public:
 
 
 }
+
+#endif
 

@@ -1,7 +1,8 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <string>
-
+#ifndef GERENCIADOR_GRAFICO_HPP
+#define GERENCIADOR_GRAFICO_HPP
 
 namespace forestry {
 
@@ -38,3 +39,4 @@ public:
 
 }
 
+#endif

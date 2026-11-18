@@ -1,6 +1,8 @@
 #pragma once
 #include "Lista.hpp"
 #include "Entidade.hpp"
+#ifndef LISTA_ENTIDADES_HPP
+#define LISTA_ENTIDADES_HPP
 
 class ListaEntidades {
 private:
@@ -17,3 +19,5 @@ public:
     void limpar();
     Elemento<Entidades::Entidade>* getPrimeiro() const;
 };
+
+#endif

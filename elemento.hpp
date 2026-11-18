@@ -1,4 +1,6 @@
 #pragma once
+#ifndef ELEMENTO_HPP
+#define ELEMENTO_HPP
 
 template <class TIPO>
 class Elemento {
@@ -19,3 +21,5 @@ public:
     void setInfo(TIPO* i) { pInfo = i; }
     TIPO* getInfo() const { return pInfo; }
 };
+
+#endif
