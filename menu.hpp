@@ -2,6 +2,8 @@
 #include "Ente.hpp"
 #include <vector>
 #include <string>
+#ifndef MENU_HPP
+#define MENU_HPP
 
 class Jogo;
 
@@ -26,3 +28,4 @@ public:
     void moverBaixo();
     void selecionarOpcao();
 };
+#endif
