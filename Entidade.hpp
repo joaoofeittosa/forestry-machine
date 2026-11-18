@@ -6,7 +6,7 @@
 namespace forestry {
 
 
-class Entidade : public ruinas::Ente {
+class Entidade : public forestry::Ente {
 protected:
     float x;
     float y;
