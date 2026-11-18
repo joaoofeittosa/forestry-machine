@@ -1,11 +1,6 @@
-<<<<<<< Updated upstream
-#include "Gerenciador_Grafico.hpp"
-#include "Ente.hpp"
-=======
 #include "Gerenciador_grafico.hpp"
 #include "Ente.hpp"
 #include <optional>
->>>>>>> Stashed changes
 
 
 namespace forestry {

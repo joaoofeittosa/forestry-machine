@@ -1,34 +1,9 @@
-<<<<<<< Updated upstream
-/*#include "forestry/Entity.h"
-namespace forestry {
-
-
-Entity::Entity(sf::Vector2f p):position_(p)
-{
-
-
-}
-
-
-void Entity::damage(int amount)
-{
-    health_-=amount; if(health_<=0) alive_=false;
-}
-
-
-}*/
-
-
-#include "Ente.hpp"
-#include "Gerenciador_Grafico.hpp"
-=======
 
 #include "Ente.hpp"
 #include "Gerenciador_grafico.hpp"
->>>>>>> Stashed changes
 
 
-namespace forestry{
+namespace forestry {
 
 
 Gerenciador_Grafico* Ente::pGG = nullptr;

@@ -1,11 +1,4 @@
-<<<<<<< Updated upstream
-#pragma once
-#include "Gerenciador_Grafico.hpp"
-#include "Jogador.h"
-
-=======
 #include "Jogo.hpp"
->>>>>>> Stashed changes
 
 namespace forestry {
 
