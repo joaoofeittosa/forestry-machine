@@ -3,7 +3,7 @@
 #include "Jogador.h"
 
 
-namespace ruinas {
+namespace forestry {
 
 
 class Jogo {

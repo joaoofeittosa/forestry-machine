@@ -1,7 +1,7 @@
 #include "Jogo.h"
 
 
-namespace ruinas {
+namespace forestry {
 
 
 Jogo::Jogo() :

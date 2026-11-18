@@ -4,7 +4,7 @@
 #include <string>
 
 
-namespace ruinas {
+namespace forestry {
 class Entity {
 public:
     explicit Entity(sf::Vector2f position); virtual ~Entity()=default;

@@ -2,7 +2,7 @@
 #include "Ente.h"
 
 
-namespace ruinas {
+namespace forestry {
 
 
 Gerenciador_Grafico::Gerenciador_Grafico(unsigned int largura,

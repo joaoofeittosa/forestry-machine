@@ -3,7 +3,7 @@
 
 int main()
 {
-    ruinas::Jogo jogo;
+    forestry::Jogo jogo;
     jogo.executar();
     return 0;
 }

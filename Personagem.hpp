@@ -2,7 +2,7 @@
 #include "Entidade.h"
 
 
-namespace ruinas {
+namespace forestry {
 
 
 class Personagem : public Entidade {

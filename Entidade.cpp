@@ -1,7 +1,7 @@
 #include "Entidade.h"
 
 
-namespace ruinas {
+namespace forestry {
 
 
 Entidade::Entidade(sf::Vector2f posicao) :

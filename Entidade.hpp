@@ -3,7 +3,7 @@
 #include <fstream>
 
 
-namespace ruinas {
+namespace forestry {
 
 
 class Entidade : public Ente {

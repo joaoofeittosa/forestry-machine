@@ -1,5 +1,5 @@
-/*#include "ruinas/Entity.h"
-namespace ruinas {
+/*#include "forestry/Entity.h"
+namespace forestry {
 
 
 Entity::Entity(sf::Vector2f p):position_(p)
@@ -22,7 +22,7 @@ void Entity::damage(int amount)
 #include "Gerenciador_Grafico.h"
 
 
-namespace ruinas {
+namespace forestry{
 
 
 Gerenciador_Grafico* Ente::pGG = nullptr;

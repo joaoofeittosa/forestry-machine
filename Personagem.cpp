@@ -1,7 +1,7 @@
 #include "Personagem.h"
 
 
-namespace ruinas {
+namespace forestry {
 
 
 Personagem::Personagem(sf::Vector2f posicao, int vidas) :
