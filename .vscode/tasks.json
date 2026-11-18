@@ -4,13 +4,19 @@
         {
             "label": "Compilar Jogo SFML",
             "type": "shell",
-            "command": "g++",
+            "command": "C:/msys64/ucrt64/bin/g++.exe",
             "args": [
                 "-std=c++17",
                 "-g",
-                "${workspaceFolder}/*.cpp",
-                "-I", "C:/SFML/include",
-                "-L", "C:/SFML/lib",
+                "${workspaceFolder}/main.cpp",
+                "${workspaceFolder}/Jogo.cpp",
+                "${workspaceFolder}/Jogador.cpp",
+                "${workspaceFolder}/Personagem.cpp",
+                "${workspaceFolder}/Entidade.cpp",
+                "${workspaceFolder}/Ente.cpp",
+                "${workspaceFolder}/Gerenciador _grafico.cpp",
+                "-I", "C:/msys64/ucrt64/include",
+                "-L", "C:/msys64/ucrt64/lib",
                 "-o", "${workspaceFolder}/jogo.exe",
                 "-lsfml-graphics",
                 "-lsfml-window",
@@ -19,6 +25,11 @@
             "group": {
                 "kind": "build",
                 "isDefault": true
+            },
+            "options": {
+                "env": {
+                    "PATH": "C:\\msys64\\ucrt64\\bin;${env:PATH}"
+                }
             },
             "problemMatcher": ["$gcc"]
         }

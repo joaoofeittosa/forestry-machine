@@ -1,42 +1,51 @@
+<<<<<<< Updated upstream
 #include "Jogo.hpp"
 #include "Ente.hpp"
 
+=======
+#include "Jogador.hpp"
+#include <memory>
+>>>>>>> Stashed changes
 
 namespace forestry {
 
+const float Jogador::VELOCIDADE = 250.f;
 
-Jogo::Jogo() :
-    GG(),
-    pJog1(nullptr)
+Jogador::Jogador(sf::Vector2f posicao) :
+    Personagem(posicao, 1),
+    pontos(0)
 {
-    Ente::setGG(&GG);
-    pJog1 = new Jogador(sf::Vector2f(100.f, 100.f));
+    pFig = new sf::RectangleShape(sf::Vector2f(40.f, 40.f));
+    pFig->setFillColor(sf::Color::Green);
+    pFig->setPosition(getPosicao());
 }
 
-
-Jogo::~Jogo()
+Jogador::~Jogador()
 {
-    delete pJog1;
-    pJog1 = nullptr;
-    Ente::setGG(nullptr);
+    delete pFig;
+    pFig = nullptr;
 }
 
-
-void Jogo::executar()
+void Jogador::executar()
 {
-    while (GG.janelaAberta()) {
-        GG.processarEventos();
-        GG.limpar();
-
-
-        pJog1->executar();
-        pJog1->desenhar();
-
-
-        GG.mostrar();
-    }
+    mover();
 }
 
+void Jogador::mover()
+{
+    sf::Vector2f direcao(0.f, 0.f);
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left)) direcao.x -= 1.f;
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right)) direcao.x += 1.f;
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up)) direcao.y -= 1.f;
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down)) direcao.y += 1.f;
+
+    setPosicao(getPosicao() + direcao * VELOCIDADE / 60.f);
+    pFig->setPosition(getPosicao());
+}
+
+void Jogador::salvar()
+{
+}
 
 }
 

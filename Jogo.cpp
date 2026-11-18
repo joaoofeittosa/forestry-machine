@@ -1,25 +1,39 @@
+<<<<<<< Updated upstream
 #pragma once
 #include "Gerenciador_Grafico.hpp"
 #include "Jogador.h"
 
+=======
+#include "Jogo.hpp"
+>>>>>>> Stashed changes
 
 namespace forestry {
 
+Jogo::Jogo() :
+    GG(),
+    pJog1(nullptr)
+{
+    Ente::setGG(&GG);
+    pJog1 = new Jogador(sf::Vector2f(100.f, 100.f));
+}
 
-class Jogo {
-private:
-    Gerenciador_Grafico GG;
-    Jogador* pJog1;
+Jogo::~Jogo()
+{
+    delete pJog1;
+    pJog1 = nullptr;
+    Ente::setGG(nullptr);
+}
 
-
-public:
-    Jogo();
-    ~Jogo();
-
-
-    void executar();
-};
-
+void Jogo::executar()
+{
+    while (GG.janelaAberta()) {
+        GG.processarEventos();
+        GG.limpar();
+        pJog1->executar();
+        pJog1->desenhar();
+        GG.mostrar();
+    }
+}
 
 }
 

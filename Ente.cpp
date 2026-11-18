@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 /*#include "forestry/Entity.h"
 namespace forestry {
 
@@ -20,6 +21,11 @@ void Entity::damage(int amount)
 
 #include "Ente.hpp"
 #include "Gerenciador_Grafico.hpp"
+=======
+
+#include "Ente.hpp"
+#include "Gerenciador_grafico.hpp"
+>>>>>>> Stashed changes
 
 
 namespace forestry{

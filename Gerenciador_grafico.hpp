@@ -32,6 +32,7 @@ public:
     void processarEventos();
     bool janelaAberta() const;
     void fechar();
+    
 };
 
 
