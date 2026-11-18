@@ -41,7 +41,7 @@ protected:
 #include <SFML/Graphics.hpp>
 
 
-namespace ruinas {
+namespace forestry {
 
 
 class Gerenciador_Grafico;

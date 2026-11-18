@@ -1,11 +1,6 @@
-<<<<<<< Updated upstream
 #include "Jogo.hpp"
 #include "Ente.hpp"
 
-=======
-#include "Jogador.hpp"
-#include <memory>
->>>>>>> Stashed changes
 
 namespace forestry {
 

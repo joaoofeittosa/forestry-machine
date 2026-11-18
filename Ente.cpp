@@ -1,6 +1,6 @@
 
-#include "Ente.hpp"
 #include "Gerenciador_grafico.hpp"
+#include "Ente.hpp"
 
 
 namespace forestry {
