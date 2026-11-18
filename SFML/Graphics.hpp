@@ -29,7 +29,6 @@
 // Headers
 ////////////////////////////////////////////////////////////
 
-#include <SFML/Window.hpp>
 #include <SFML/Graphics/BlendMode.hpp>
 #include <SFML/Graphics/CircleShape.hpp>
 #include <SFML/Graphics/Color.hpp>
