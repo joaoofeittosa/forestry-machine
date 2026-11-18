@@ -1,4 +1,5 @@
 #include "Jogo.hpp"
+#include <SFML/Graphics.hpp>
 
 
 int main()

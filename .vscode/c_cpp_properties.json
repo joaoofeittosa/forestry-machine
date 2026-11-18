@@ -4,7 +4,8 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
-                "C:/msys64/ucrt64/include"
+                "C:/msys64/ucrt64/include",
+                "${workspaceFolder}/SFML-2.6.2-windows-vc17-64-bit/SFML-2.6.2/include"
             ],
             "defines": [],
             "compilerPath": "C:/msys64/ucrt64/bin/g++.exe",
