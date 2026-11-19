@@ -62,6 +62,11 @@ float Gerenciador_Grafico::getDeltaTime() const
     return dt;
 }
 
+sf::Vector2u Gerenciador_Grafico::getTamanhoJanela() const
+{
+    return obj.getSize();
+}
+
 
 bool Gerenciador_Grafico::janelaAberta() const
 {

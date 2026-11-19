@@ -28,6 +28,7 @@ public:
 
 
     float getDeltaTime() const;
+    sf::Vector2u getTamanhoJanela() const;
     void limpar();
     void mostrar();
     void processarEventos();

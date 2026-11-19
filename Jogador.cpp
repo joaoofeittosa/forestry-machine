@@ -1,5 +1,6 @@
 #include "Jogo.hpp"
 #include "Ente.hpp"
+#include <algorithm>
 
 
 namespace forestry {
@@ -34,7 +35,21 @@ void Jogador::mover()
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up)) direcao.y -= 1.f;
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down)) direcao.y += 1.f;
 
-    setPosicao(getPosicao() + direcao * VELOCIDADE / 60.f);
+    sf::Vector2f novaPosicao =
+        getPosicao() + direcao * VELOCIDADE * pGG->getDeltaTime();
+    const sf::Vector2u tamanhoJanela = pGG->getTamanhoJanela();
+    const sf::FloatRect limitesFigura = pFig->getLocalBounds();
+
+    novaPosicao.x = std::clamp(
+        novaPosicao.x,
+        0.f,
+        std::max(0.f, static_cast<float>(tamanhoJanela.x) - limitesFigura.size.x));
+    novaPosicao.y = std::clamp(
+        novaPosicao.y,
+        0.f,
+        std::max(0.f, static_cast<float>(tamanhoJanela.y) - limitesFigura.size.y));
+
+    setPosicao(novaPosicao);
     pFig->setPosition(getPosicao());
 }
 

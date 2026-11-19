@@ -14,6 +14,7 @@
                 "${workspaceFolder}/Personagem.cpp",
                 "${workspaceFolder}/Entidade.cpp",
                 "${workspaceFolder}/Ente.cpp",
+                "${workspaceFolder}/chao.cpp",
                 "${workspaceFolder}/Gerenciador _grafico.cpp",
                 "-I", "C:/msys64/ucrt64/include",
                 "-L", "C:/msys64/ucrt64/lib",

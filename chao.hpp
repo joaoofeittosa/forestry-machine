@@ -1,26 +1,21 @@
 #ifndef CHAO_H
 #define CHAO_H
 
-#include "Entidade.h"
+#include "Entidade.hpp"
 
-namespace TrabalhoJogo{
-namespace Entidades{
+namespace forestry
+{
+    class Chao : public Entidade {
+    private:
+        float largura;
+        float altura;
 
+    public:
+        Chao(float x, float y, float largura, float altura);
+        virtual ~Chao();
 
-class Chao : public Entidade {
-private:
-    float largura;
-    float altura;
-
-public:
-    Chao(float x, float y, float largura, float altura);
-    virtual ~Chao();
-
-    virtual void executar();
-    virtual void salvar();
-};
-
-
-}
+        virtual void executar();
+        virtual void salvar();
+    };
 }
 #endif

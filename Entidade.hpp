@@ -8,7 +8,7 @@
 namespace forestry {
 
 
-class Entidade : public forestry::Ente {
+class Entidade : public Ente {
 protected:
     float x;
     float y;
@@ -21,6 +21,7 @@ public:
 
 
     void salvarDataBuffer();
+    void chao();
 
 
     virtual void executar() = 0;
