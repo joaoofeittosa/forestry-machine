@@ -20,7 +20,7 @@ private:
 public:
     Gerenciador_Grafico(unsigned int largura = 1280,
                         unsigned int altura = 720,
-                        const std::string& titulo = "Ruinas");
+                         const std::string& titulo = "Forestry-Machine");
     ~Gerenciador_Grafico();
 
 
