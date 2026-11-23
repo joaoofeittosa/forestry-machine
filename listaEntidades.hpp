@@ -1,4 +1,3 @@
-#pragma once
 #include "Lista.hpp"
 #include "Entidade.hpp"
 #ifndef LISTA_ENTIDADES_HPP
@@ -6,18 +5,18 @@
 
 class ListaEntidades {
 private:
-    Lista<Entidades::Entidade> LEs;
+    Lista<forestry::Entidade> LEs;
 
 public:
     ListaEntidades();
     ~ListaEntidades();
 
-    void incluir(Entidades::Entidade* pE);
-    void remover(Entidades::Entidade* pE);
+    void incluir(forestry::Entidade* pE);
+    void remover(forestry::Entidade* pE);
     void percorrer();
     void desenharTudo();
     void limpar();
-    Elemento<Entidades::Entidade>* getPrimeiro() const;
+    Elemento<forestry::Entidade>* getPrimeiro() const;
 };
 
 #endif

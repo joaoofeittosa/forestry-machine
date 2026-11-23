@@ -1,4 +1,3 @@
-#pragma once
 #include "Gerenciador_grafico.hpp"
 #include "Jogador.hpp"
 #ifndef JOGO_HPP

@@ -1,4 +1,3 @@
-#pragma once
 #include "Elemento.hpp"
 #ifndef LISTA_HPP
 #define LISTA_HPP

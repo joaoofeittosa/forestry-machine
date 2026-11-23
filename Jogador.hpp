@@ -1,4 +1,3 @@
-#pragma once
 #include "Personagem.hpp"
 #ifndef JOGADOR_HPP
 #define JOGADOR_HPP

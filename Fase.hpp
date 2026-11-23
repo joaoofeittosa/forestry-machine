@@ -1,17 +1,18 @@
 #include "Ente.hpp"
 #include "ListaEntidades.hpp"
 #include "Gerenciador_grafico.hpp"
+
 #ifndef FASE_HPP
 #define FASE_HPP
 
 
 namespace forestry {
+
     class Fase : public Ente {
         protected:
             ListaEntidades listaEntidades;
             std::string nomeFase;
-
-            GerenciadorColisoes gerenciadorColisoes;
+             GerenciadorColisoes gerenciadorColisoes;
         
         public:
             Fase(const std::string& nome);
@@ -19,13 +20,14 @@ namespace forestry {
 
             virtual void executar() override;
             virtual void salvar() override;
+
             virtual void criarInimigos() = 0;
             virtual void criarObstaculo() = 0;
             virtual void criarCenario() = 0;
 
             void incluirEntidade(Entidade* pE);
             void removerEntidade(Entidade* pE);
-    }
+    };
 }
 
 #endif

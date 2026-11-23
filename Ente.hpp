@@ -1,4 +1,3 @@
-#pragma once
 #include <SFML/Graphics.hpp>
 #ifndef ENTE_HPP
 #define ENTE_HPP

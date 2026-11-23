@@ -1,4 +1,3 @@
-#pragma once
 #include "Ente.hpp"
 #include <vector>
 #include <string>

@@ -1,4 +1,3 @@
-#pragma once
 #include "Ente.hpp"
 #include <fstream>
 #ifndef ENTIDADE_HPP

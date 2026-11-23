@@ -1,4 +1,3 @@
-#pragma once
 #include "Entidade.hpp"
 #ifndef PERSONAGEM_HPP
 #define PERSONAGEM_HPP
