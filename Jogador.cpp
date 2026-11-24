@@ -1,19 +1,19 @@
-#include "Jogo.hpp"
-#include "Ente.hpp"
-#include <algorithm>
-
+#include "Jogador.hpp"
+#include "Gerenciador_grafico.hpp"
 
 namespace forestry {
 
-const float Jogador::VELOCIDADE = 250.f;
+const float Jogador::VELOCIDADE = 300.f;
 
-Jogador::Jogador(sf::Vector2f posicao) :
-    Personagem(posicao, 1),
-    pontos(0)
+Jogador::Jogador(sf::Vector2f posicao, bool segundo) :
+    Personagem(posicao, 3),
+    pontos(0),
+    segundo(segundo)
 {
-    pFig = new sf::RectangleShape(sf::Vector2f(40.f, 40.f));
-    pFig->setFillColor(sf::Color::Green);
-    pFig->setPosition(getPosicao());
+    sf::RectangleShape* pRet = new sf::RectangleShape(sf::Vector2f(40.f, 40.f));
+    pRet->setFillColor(segundo ? sf::Color::Blue : sf::Color::Green);
+    pRet->setPosition(sf::Vector2f(x, y));
+    pFig = pRet;
 }
 
 Jogador::~Jogador()
@@ -29,32 +29,32 @@ void Jogador::executar()
 
 void Jogador::mover()
 {
-    sf::Vector2f direcao(0.f, 0.f);
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left)) direcao.x -= 1.f;
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right)) direcao.x += 1.f;
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up)) direcao.y -= 1.f;
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down)) direcao.y += 1.f;
+    float dt = pGG ? pGG->getDeltaTime() : 0.f;
 
-    sf::Vector2f novaPosicao =
-        getPosicao() + direcao * VELOCIDADE * pGG->getDeltaTime();
-    const sf::Vector2u tamanhoJanela = pGG->getTamanhoJanela();
-    const sf::FloatRect limitesFigura = pFig->getLocalBounds();
+    sf::Keyboard::Key esq   = segundo ? sf::Keyboard::Key::A     : sf::Keyboard::Key::Left;
+    sf::Keyboard::Key dir   = segundo ? sf::Keyboard::Key::D     : sf::Keyboard::Key::Right;
+    sf::Keyboard::Key cima  = segundo ? sf::Keyboard::Key::W     : sf::Keyboard::Key::Up;
+    sf::Keyboard::Key baixo = segundo ? sf::Keyboard::Key::S     : sf::Keyboard::Key::Down;
 
-    novaPosicao.x = std::clamp(
-        novaPosicao.x,
-        0.f,
-        std::max(0.f, static_cast<float>(tamanhoJanela.x) - limitesFigura.size.x));
-    novaPosicao.y = std::clamp(
-        novaPosicao.y,
-        0.f,
-        std::max(0.f, static_cast<float>(tamanhoJanela.y) - limitesFigura.size.y));
+    velocidade = sf::Vector2f(0.f, 0.f);
 
-    setPosicao(novaPosicao);
-    pFig->setPosition(getPosicao());
+    if (sf::Keyboard::isKeyPressed(esq))   { velocidade.x -= VELOCIDADE; }
+    if (sf::Keyboard::isKeyPressed(dir))   { velocidade.x += VELOCIDADE; }
+    if (sf::Keyboard::isKeyPressed(cima))  { velocidade.y -= VELOCIDADE; }
+    if (sf::Keyboard::isKeyPressed(baixo)) { velocidade.y += VELOCIDADE; }
+
+    x += velocidade.x * dt;
+    y += velocidade.y * dt;
+
+    pFig->setPosition(sf::Vector2f(x, y));
 }
 
 void Jogador::salvar()
 {
+    salvarDataBuffer();
+    if (buffer.is_open()) {
+        buffer << num_vidas << " " << pontos << std::endl;
+    }
 }
 
 }

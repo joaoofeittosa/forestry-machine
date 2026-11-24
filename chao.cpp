@@ -1,4 +1,5 @@
-#include "Chao.hpp"
+#include "chao.hpp"
+#include <algorithm>
 
 namespace forestry
 {
@@ -11,8 +12,37 @@ namespace forestry
     Chao::~Chao() {
     }
 
+    void Chao::adicionarEntidade(Entidade* entidade) {
+        if (entidade) {
+            entidades.push_back(entidade);
+        }
+    }
+
+    void Chao::definirLimites(float novoX, float novoY,
+                              float novaLargura, float novaAltura) {
+        setPosicao(sf::Vector2f(novoX, novoY));
+        largura = novaLargura;
+        altura = novaAltura;
+    }
+
     void Chao::executar() {
-        // O chao e fixo: nao precisa atualizar sua posicao.
+        for (Entidade* entidade : entidades) {
+            if (!entidade || !entidade->getFigura()) {
+                continue;
+            }
+
+            const sf::Vector2f tamanhoFigura =
+                entidade->getFigura()->getLocalBounds().size;
+            sf::Vector2f posicao = entidade->getPosicao();
+
+            const float maxX = std::max(x, x + largura - tamanhoFigura.x);
+            const float maxY = std::max(y, y + altura - tamanhoFigura.y);
+            posicao.x = std::clamp(posicao.x, x, maxX);
+            posicao.y = std::clamp(posicao.y, y, maxY);
+
+            entidade->setPosicao(posicao);
+            entidade->getFigura()->setPosition(posicao);
+        }
     }
 
     void Chao::salvar() {

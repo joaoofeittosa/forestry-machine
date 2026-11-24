@@ -14,8 +14,9 @@
                 "${workspaceFolder}/Personagem.cpp",
                 "${workspaceFolder}/Entidade.cpp",
                 "${workspaceFolder}/Ente.cpp",
+                "${workspaceFolder}/Gerenciador_grafico.cpp",
                 "${workspaceFolder}/chao.cpp",
-                "${workspaceFolder}/Gerenciador _grafico.cpp",
+                "${workspaceFolder}/menu.cpp",
                 "-I", "C:/msys64/ucrt64/include",
                 "-L", "C:/msys64/ucrt64/lib",
                 "-o", "${workspaceFolder}/jogo.exe",
@@ -29,7 +30,7 @@
             },
             "options": {
                 "env": {
-                    "PATH": "C:\\msys64\\ucrt64\\bin;${env:PATH}"
+                    "PATH": "C:\\msys64\\ucrt64\\bin;C:\\msys64\\usr\\bin;${env:PATH}"
                 }
             },
             "problemMatcher": ["$gcc"]

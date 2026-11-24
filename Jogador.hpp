@@ -3,27 +3,23 @@
 
 #include "Personagem.hpp"
 
-
 namespace forestry {
-
 
 class Jogador : public Personagem {
 private:
     int pontos;
+    bool segundo;
     static const float VELOCIDADE;
 
-
 public:
-    explicit Jogador(sf::Vector2f posicao = sf::Vector2f(0.f, 0.f));
+    explicit Jogador(sf::Vector2f posicao = sf::Vector2f(0.f, 0.f),
+                     bool segundo = false);
     ~Jogador();
-
 
     void executar();
     void salvar();
     void mover();
 };
 
-
 }
-
 #endif
