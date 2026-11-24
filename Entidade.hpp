@@ -21,7 +21,6 @@ public:
 
 
     void salvarDataBuffer();
-    void chao();
 
 
     virtual void executar() = 0;

@@ -9,7 +9,7 @@ Jogador::Jogador(sf::Vector2f posicao, bool segundo) :
     Personagem(posicao, 3),
     pontos(0),
     segundo(segundo),
-    figuraVisual(sf::Vector2f(192.f, 192.f))
+    figuraVisual(sf::Vector2f(260.f, 260.f))
 {
     sf::RectangleShape* pRet = new sf::RectangleShape(sf::Vector2f(40.f, 40.f));
     if (textura.loadFromFile(segundo

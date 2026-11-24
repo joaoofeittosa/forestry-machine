@@ -13,7 +13,7 @@ Gnomo::Gnomo(sf::Vector2f pos)
       direcao(1)
 {
     num_vidas = 2;
-    getCorpo().setSize(sf::Vector2f(164.f, 128.f));
+    getCorpo().setSize(sf::Vector2f(164.f, 120.f));
     getCorpo().setPosition(pos);
 
     if (textura.loadFromFile("Assets/Gnomo.png")) {

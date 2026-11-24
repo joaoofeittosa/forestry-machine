@@ -12,7 +12,7 @@ Mineiro::Mineiro(sf::Vector2f pos)
       tempoAnimacao(0.f)
 {
     num_vidas = 4;
-    getCorpo().setSize(sf::Vector2f(192.f, 192.f));
+    getCorpo().setSize(sf::Vector2f(164.f, 164.f));
     getCorpo().setPosition(pos);
 
     if (textura.loadFromFile("Assets/Minerador.png")) {

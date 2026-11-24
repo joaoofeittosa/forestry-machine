@@ -31,12 +31,12 @@ namespace forestry
                 continue;
             }
 
-            const sf::Vector2f tamanhoFigura =
+            const sf::Vector2f  TamanhoJanela = sf::Vector2f(260.f, 260.f); // Example window size
                 entidade->getFigura()->getLocalBounds().size;
             sf::Vector2f posicao = entidade->getPosicao();
 
-            const float maxX = std::max(x, x + largura - tamanhoFigura.x);
-            const float maxY = std::max(y, y + altura - tamanhoFigura.y);
+            const float maxX = std::max(x, x + largura - TamanhoJanela.x);
+            const float maxY = std::max(y, y + altura - TamanhoJanela.y);
             posicao.x = std::clamp(posicao.x, x, maxX);
             posicao.y = std::clamp(posicao.y, y, maxY);
 
