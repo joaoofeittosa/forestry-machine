@@ -6,19 +6,19 @@ ListaEntidades::~ListaEntidades() {
     limpar();
 }
 
-void ListaEntidades::incluir(Entidades::Entidade* pE) {
+void ListaEntidades::incluir(forestry::Entidade* pE) {
     LEs.incluir(pE);
 }
 
-void ListaEntidades::remover(Entidades::Entidade* pE) {
+void ListaEntidades::remover(forestry::Entidade* pE) {
     LEs.remover(pE);
 }
 
 void ListaEntidades::percorrer() {
-    Elemento<Entidades::Entidade>* aux = LEs.getPrimeiro();
+    Elemento<forestry::Entidade>* aux = LEs.getPrimeiro();
     while (aux != nullptr) {
-        Entidades::Entidade* ent = aux->getInfo();
-        if (ent && ent->getAtivo()) {
+        forestry::Entidade* ent = aux->getInfo();
+        if (ent) {
             ent->executar();
         }
         aux = aux->getProx();
@@ -26,10 +26,10 @@ void ListaEntidades::percorrer() {
 }
 
 void ListaEntidades::desenharTudo() {
-    Elemento<Entidades::Entidade>* aux = LEs.getPrimeiro();
+    Elemento<forestry::Entidade>* aux = LEs.getPrimeiro();
     while (aux != nullptr) {
-        Entidades::Entidade* ent = aux->getInfo();
-        if (ent && ent->getAtivo()) {
+        forestry::Entidade* ent = aux->getInfo();
+        if (ent) {
             ent->desenhar();
         }
         aux = aux->getProx();
@@ -37,7 +37,7 @@ void ListaEntidades::desenharTudo() {
 }
 
 void ListaEntidades::limpar() {
-    Elemento<Entidades::Entidade>* aux = LEs.getPrimeiro();
+    Elemento<forestry::Entidade>* aux = LEs.getPrimeiro();
     while (aux != nullptr) {
         delete aux->getInfo();
         aux = aux->getProx();
@@ -45,6 +45,6 @@ void ListaEntidades::limpar() {
     LEs.limpar();
 }
 
-Elemento<Entidades::Entidade>* ListaEntidades::getPrimeiro() const {
+Elemento<forestry::Entidade>* ListaEntidades::getPrimeiro() const {
     return LEs.getPrimeiro();
 }

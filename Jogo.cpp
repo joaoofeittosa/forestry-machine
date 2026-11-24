@@ -67,6 +67,8 @@ void Jogo::executar()
 }*/
 #include "Jogo.hpp"
 #include "Chao.hpp"
+#include "Fase.hpp"
+#include "FaseFloresta.hpp"
 #include "menu.hpp"
 
 namespace forestry {
@@ -75,6 +77,7 @@ Jogo::Jogo() :
     GG(),
     pMenu(nullptr),
     pChao(nullptr),
+    pFase(nullptr),
     pJog1(nullptr),
     pJog2(nullptr),
     jogando(false)
@@ -94,10 +97,12 @@ Jogo::~Jogo()
     delete pJog1;
     delete pJog2;
     delete pChao;
+    delete pFase;
     delete pMenu;
     pJog1 = nullptr;
     pJog2 = nullptr;
     pChao = nullptr;
+    pFase = nullptr;
     pMenu = nullptr;
     Ente::setGG(nullptr);
 }
@@ -107,11 +112,14 @@ void Jogo::iniciarPartida(bool doisJogadores)
     delete pJog1;
     delete pJog2;
     delete pChao;
+    delete pFase;
     pJog1 = nullptr;
     pJog2 = nullptr;
     pChao = nullptr;
+    pFase = nullptr;
 
     const sf::Vector2u tamanhoJanela = GG.getTamanhoJanela();
+    pFase = new FaseFloresta();
     pChao = new Chao(0.f, 0.f,
                      static_cast<float>(tamanhoJanela.x),
                      static_cast<float>(tamanhoJanela.y));
@@ -138,6 +146,8 @@ void Jogo::executar()
         if (!jogando) {
             pMenu->executar();
         } else {
+            pFase->executar();
+
             pJog1->executar();
             if (pJog2) {
                 pJog2->executar();

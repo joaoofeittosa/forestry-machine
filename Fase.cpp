@@ -1,4 +1,3 @@
-
 #include "Fase.hpp"
 
 #include <filesystem>
@@ -10,23 +9,20 @@ namespace forestry {
 Fase::Fase(const std::string& nome)
     : Ente(),
       listaEntidades(),
-      nomeFase(nome),
-     /* gerenciadorColisoes()*/
+      nomeFase(nome)
 {
-
 }
 
-Fase::~Fase() {
-
-   /* gerenciadorColisoes.limpar();*/
+Fase::~Fase()
+{
     listaEntidades.limpar();
 }
 
-void Fase::executar() {
- 
+void Fase::executar()
+{
     Elemento<Entidade>* pEl = listaEntidades.getPrimeiro();
     while (pEl) {
-        Elemento<Entidade>* pProx = pEl->getProximo();
+        Elemento<Entidade>* pProx = pEl->getProx();
         Entidade* pE = pEl->getInfo();
         if (pE) {
             pE->executar();
@@ -34,11 +30,11 @@ void Fase::executar() {
         pEl = pProx;
     }
 
-   /* gerenciadorColisoes.executar();*/
     listaEntidades.desenharTudo();
 }
 
-void Fase::salvar() {
+void Fase::salvar()
+{
     std::error_code ec;
     std::filesystem::create_directories("jogo.salvo", ec);
 
@@ -60,28 +56,24 @@ void Fase::salvar() {
         if (pE) {
             if (!primeiro) saida << ",\n";
             primeiro = false;
-            pE->salvar(saida);  
-}
+            pE->salvar();
         }
-        pEl = pEl->getProximo();
+        pEl = pEl->getProx();
     }
 
     saida << "\n  ]\n}\n";
 }
 
-void Fase::incluirEntidade(Entidade* pE) {
+void Fase::incluirEntidade(Entidade* pE)
+{
     if (!pE) return;
     listaEntidades.incluir(pE);
-    /* gerenciadorColisoes.incluirEntidade(pE); */
 }
 
-void Fase::removerEntidade(Entidade* pE) {
+void Fase::removerEntidade(Entidade* pE)
+{
     if (!pE) return;
-    /* gerenciadorColisoes.removerEntidade(pE); */
     listaEntidades.remover(pE);
 }
 
-} 
-
-
-
+}

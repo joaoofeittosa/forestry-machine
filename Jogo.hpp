@@ -35,12 +35,14 @@ namespace forestry {
 
 class Menu;
 class Chao;
+class Fase;
 
 class Jogo {
 private:
     Gerenciador_Grafico GG;
     Menu* pMenu;
     Chao* pChao;
+    Fase* pFase;
     Jogador* pJog1;
     Jogador* pJog2;
     bool jogando;

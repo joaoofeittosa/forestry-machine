@@ -14,6 +14,7 @@ namespace forestry {
         FaseFloresta();
         virtual ~FaseFloresta();
 
+        virtual void executar() override;
         virtual void criarInimigos() override;   
         virtual void criarObstaculo() override;  
         virtual void criarCenario() override;    

@@ -7,28 +7,27 @@
 /*#include "GerenciadorColisoes.hpp"*/
 #include "Entidade.hpp"
 
-
 namespace forestry {
 
     class Fase : public Ente {
-        protected:
-            ListaEntidades listaEntidades;
-            std::string nomeFase;
-             GerenciadorColisoes gerenciadorColisoes;
-        
-        public:
-            Fase(const std::string& nome);
-            virtual ~Fase();
+    protected:
+        ListaEntidades listaEntidades;
+        std::string nomeFase;
+        // GerenciadorColisoes gerenciadorColisoes;
 
-            virtual void executar() override;
-            virtual void salvar() override;
+    public:
+        Fase(const std::string& nome);
+        virtual ~Fase();
 
-            virtual void criarInimigos() = 0;
-            virtual void criarObstaculo() = 0;
-            virtual void criarCenario() = 0;
+        virtual void executar() override;
+        virtual void salvar();
 
-            void incluirEntidade(Entidade* pE);
-            void removerEntidade(Entidade* pE);
+        virtual void criarInimigos() = 0;
+        virtual void criarObstaculo() = 0;
+        virtual void criarCenario() = 0;
+
+        void incluirEntidade(Entidade* pE);
+        void removerEntidade(Entidade* pE);
     };
 }
 
