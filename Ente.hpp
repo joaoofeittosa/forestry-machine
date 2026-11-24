@@ -23,7 +23,7 @@ public:
 
 
     virtual void executar() = 0;
-    void desenhar();
+    virtual void desenhar();
 
 
     sf::Shape* getFigura() const {

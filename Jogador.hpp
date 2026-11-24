@@ -9,6 +9,8 @@ class Jogador : public Personagem {
 private:
     int pontos;
     bool segundo;
+    sf::Texture textura;
+    sf::RectangleShape figuraVisual;
     static const float VELOCIDADE;
 
 public:
@@ -17,6 +19,7 @@ public:
     ~Jogador();
 
     void executar();
+    void desenhar() override;
     void salvar();
     void mover();
 };

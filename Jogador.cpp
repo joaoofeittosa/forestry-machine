@@ -8,11 +8,23 @@ const float Jogador::VELOCIDADE = 300.f;
 Jogador::Jogador(sf::Vector2f posicao, bool segundo) :
     Personagem(posicao, 3),
     pontos(0),
-    segundo(segundo)
+    segundo(segundo),
+    figuraVisual(sf::Vector2f(192.f, 192.f))
 {
     sf::RectangleShape* pRet = new sf::RectangleShape(sf::Vector2f(40.f, 40.f));
-    pRet->setFillColor(segundo ? sf::Color::Blue : sf::Color::Green);
+    if (textura.loadFromFile(segundo
+            ? "Assets/Personagem_2.png"
+            : "Assets/Personagem_1.png")) {
+        textura.setSmooth(false);
+        figuraVisual.setTexture(&textura);
+        figuraVisual.setTextureRect(
+            sf::IntRect(sf::Vector2i(0, 0), sf::Vector2i(48, 64)));
+    } else {
+        figuraVisual.setFillColor(
+            segundo ? sf::Color::Blue : sf::Color::Green);
+    }
     pRet->setPosition(sf::Vector2f(x, y));
+    figuraVisual.setPosition(sf::Vector2f(x, y));
     pFig = pRet;
 }
 
@@ -25,6 +37,14 @@ Jogador::~Jogador()
 void Jogador::executar()
 {
     mover();
+}
+
+void Jogador::desenhar()
+{
+    if (pGG) {
+        figuraVisual.setPosition(pFig->getPosition());
+        pGG->desenharObjeto(figuraVisual);
+    }
 }
 
 void Jogador::mover()
@@ -47,6 +67,7 @@ void Jogador::mover()
     y += velocidade.y * dt;
 
     pFig->setPosition(sf::Vector2f(x, y));
+    figuraVisual.setPosition(sf::Vector2f(x, y));
 }
 
 void Jogador::salvar()
