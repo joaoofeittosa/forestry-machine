@@ -1,7 +1,7 @@
-#include "Entidade.hpp"
 #ifndef PERSONAGEM_HPP
 #define PERSONAGEM_HPP
 
+#include "Entidade.hpp"
 
 namespace forestry {
 

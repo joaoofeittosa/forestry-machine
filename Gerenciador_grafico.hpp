@@ -1,9 +1,11 @@
+#ifndef GERENCIADOR_GRAFICO_HPP
+#define GERENCIADOR_GRAFICO_HPP
+
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/System.hpp>
 #include <string>
-#ifndef GERENCIADOR_GRAFICO_HPP
-#define GERENCIADOR_GRAFICO_HPP
+
 
 namespace forestry {
 

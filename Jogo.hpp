@@ -1,7 +1,8 @@
-#include "Gerenciador_grafico.hpp"
-#include "Jogador.hpp"
 #ifndef JOGO_HPP
 #define JOGO_HPP
+
+#include "Gerenciador_grafico.hpp"
+#include "Jogador.hpp"
 
 
 namespace forestry {

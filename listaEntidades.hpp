@@ -1,7 +1,8 @@
-#include "Lista.hpp"
-#include "Entidade.hpp"
 #ifndef LISTA_ENTIDADES_HPP
 #define LISTA_ENTIDADES_HPP
+
+#include "Lista.hpp"
+#include "Entidade.hpp"
 
 class ListaEntidades {
 private:

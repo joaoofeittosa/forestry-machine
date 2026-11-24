@@ -1,6 +1,7 @@
-#include <SFML/Graphics.hpp>
 #ifndef ENTE_HPP
 #define ENTE_HPP
+
+#include <SFML/Graphics.hpp>
 
 
 namespace forestry {

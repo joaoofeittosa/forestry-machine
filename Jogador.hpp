@@ -1,6 +1,7 @@
-#include "Personagem.hpp"
 #ifndef JOGADOR_HPP
 #define JOGADOR_HPP
+
+#include "Personagem.hpp"
 
 
 namespace forestry {

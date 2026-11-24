@@ -1,9 +1,9 @@
+#ifndef FASE_HPP
+#define FASE_HPP
+
 #include "Ente.hpp"
 #include "ListaEntidades.hpp"
 #include "Gerenciador_grafico.hpp"
-
-#ifndef FASE_HPP
-#define FASE_HPP
 
 
 namespace forestry {

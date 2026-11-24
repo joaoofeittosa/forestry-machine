@@ -1,7 +1,8 @@
-#include "Ente.hpp"
-#include <fstream>
 #ifndef ENTIDADE_HPP
 #define ENTIDADE_HPP
+
+#include "Ente.hpp"
+#include <fstream>
 
 
 namespace forestry {
