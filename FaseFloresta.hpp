@@ -5,13 +5,16 @@
 
 namespace forestry {
 
+    class Jogador;
+
     class FaseFloresta : public Fase {
     private:
-       
+        Jogador* pJogador1;
+        Jogador* pJogador2;
         sf::Texture texturaFundo;
 
     public:
-        FaseFloresta();
+        FaseFloresta(Jogador* jogador1, Jogador* jogador2 = nullptr);
         virtual ~FaseFloresta();
 
         virtual void executar() override;

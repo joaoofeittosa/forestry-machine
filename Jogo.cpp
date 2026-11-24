@@ -94,10 +94,10 @@ Jogo::Jogo(bool doisJogadores) :
 
 Jogo::~Jogo()
 {
+    delete pFase;
     delete pJog1;
     delete pJog2;
     delete pChao;
-    delete pFase;
     delete pMenu;
     pJog1 = nullptr;
     pJog2 = nullptr;
@@ -109,17 +109,16 @@ Jogo::~Jogo()
 
 void Jogo::iniciarPartida(bool doisJogadores)
 {
+    delete pFase;
     delete pJog1;
     delete pJog2;
     delete pChao;
-    delete pFase;
     pJog1 = nullptr;
     pJog2 = nullptr;
     pChao = nullptr;
     pFase = nullptr;
 
     const sf::Vector2u tamanhoJanela = GG.getTamanhoJanela();
-    pFase = new FaseFloresta();
     pChao = new Chao(0.f, 0.f,
                      static_cast<float>(tamanhoJanela.x),
                      static_cast<float>(tamanhoJanela.y));
@@ -129,6 +128,7 @@ void Jogo::iniciarPartida(bool doisJogadores)
         pJog2 = new Jogador(sf::Vector2f(200.f, 100.f), true);
         pChao->adicionarEntidade(pJog2);
     }
+    pFase = new FaseFloresta(pJog1, pJog2);
     jogando = true;
 }
 

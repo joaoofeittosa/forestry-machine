@@ -1,15 +1,18 @@
 #include "FaseFloresta.hpp"
 
-// #include "AnaoDeJardim.hpp"
-// #include "Mineiro.hpp"
+#include "Gnomo.hpp"
+#include "Mineiro.hpp"
 // #include "Rocha.hpp"
 // #include "Espinho.hpp"
+#include <algorithm>
 #include <iostream>
 
 namespace forestry {
 
-FaseFloresta::FaseFloresta()
-    : Fase("Floresta")
+FaseFloresta::FaseFloresta(Jogador* jogador1, Jogador* jogador2)
+    : Fase("Floresta"),
+      pJogador1(jogador1),
+      pJogador2(jogador2)
 {
     criarCenario();
     criarObstaculo();
@@ -48,8 +51,18 @@ void FaseFloresta::criarObstaculo() {
 }
 
 void FaseFloresta::criarInimigos() {
-    // incluirEntidade(new AnaoDeJardim(sf::Vector2f(600.f, 590.f)));
-    // incluirEntidade(new Mineiro(sf::Vector2f(1000.f, 600.f)));
+    const float linhaDoChao =
+        static_cast<float>(pGG->getTamanhoJanela().y) - 60.f;
+
+    Gnomo* gnomo = new Gnomo(sf::Vector2f(
+        600.f, std::max(0.f, linhaDoChao - 128.f)));
+    gnomo->setJogadores(pJogador1, pJogador2);
+    incluirEntidade(gnomo);
+
+    Mineiro* mineiro = new Mineiro(sf::Vector2f(
+        1000.f, std::max(0.f, linhaDoChao - 192.f)));
+    mineiro->setJogadores(pJogador1, pJogador2);
+    incluirEntidade(mineiro);
 }
 
 }
