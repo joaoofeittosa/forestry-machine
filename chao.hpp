@@ -1,5 +1,5 @@
-#ifndef CHAO_H
-#define CHAO_H
+#ifndef CHAO_HPP
+#define CHAO_HPP
 
 #include "Entidade.hpp"
 

@@ -4,6 +4,8 @@
 #include "Ente.hpp"
 #include "ListaEntidades.hpp"
 #include "Gerenciador_grafico.hpp"
+/*#include "GerenciadorColisoes.hpp"*/
+#include "Entidade.hpp"
 
 
 namespace forestry {
