@@ -12,12 +12,7 @@ Entidade::Entidade(sf::Vector2f posicao) :
 }
 
 
-Entidade::~Entidade()
-{
-    if (buffer.is_open()) {
-        buffer.close();
-    }
-}
+Entidade::~Entidade() = default;
 
 
 void Entidade::salvarDataBuffer()

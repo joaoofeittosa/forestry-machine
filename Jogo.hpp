@@ -1,7 +1,7 @@
 #ifndef JOGO_HPP
 #define JOGO_HPP
 
-#include "Gerenciador_grafico.hpp"
+/*#include "Gerenciador_grafico.hpp"
 #include "chao.hpp"
 #include "Jogador.hpp"
 
@@ -26,6 +26,34 @@ public:
     void executar();
 };
 
+
+}*/
+#include "Gerenciador_grafico.hpp"
+#include "Jogador.hpp"
+
+namespace forestry {
+
+class Menu;
+class Chao;
+
+class Jogo {
+private:
+    Gerenciador_Grafico GG;
+    Menu* pMenu;
+    Chao* pChao;
+    Jogador* pJog1;
+    Jogador* pJog2;
+    bool jogando;
+
+public:
+    Jogo();
+    explicit Jogo(bool doisJogadores);
+    ~Jogo();
+
+    void iniciarPartida(bool doisJogadores);
+    void sair();
+    void executar();
+};
 
 }
 

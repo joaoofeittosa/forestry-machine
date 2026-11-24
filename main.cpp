@@ -4,7 +4,7 @@
 
 int main()
 {
-    forestry::Jogo jogo(true);
+    forestry::Jogo jogo;
     jogo.executar();
     return 0;
 }

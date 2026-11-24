@@ -37,6 +37,9 @@ public:
     void processarEventos();
     bool janelaAberta() const;
     void fechar();
+    sf::Vector2i getPosicaoMouse() const;
+    void desenharObjeto(const sf::Drawable& d);
+
     
 };
 

@@ -16,12 +16,7 @@ Gerenciador_Grafico::Gerenciador_Grafico(unsigned int largura,
 }
 
 
-Gerenciador_Grafico::~Gerenciador_Grafico()
-{
-    if (obj.isOpen()) {
-        obj.close();
-    }
-}
+Gerenciador_Grafico::~Gerenciador_Grafico() = default;
 
 
 void Gerenciador_Grafico::desenharEnte(Ente* pE)
@@ -67,7 +62,6 @@ sf::Vector2u Gerenciador_Grafico::getTamanhoJanela() const
     return obj.getSize();
 }
 
-
 bool Gerenciador_Grafico::janelaAberta() const
 {
     return obj.isOpen();
@@ -77,6 +71,15 @@ bool Gerenciador_Grafico::janelaAberta() const
 void Gerenciador_Grafico::fechar()
 {
     obj.close();
+}
+void Gerenciador_Grafico::desenharObjeto(const sf::Drawable& d)
+{
+    obj.draw(d);
+}
+
+sf::Vector2i Gerenciador_Grafico::getPosicaoMouse() const
+{
+    return sf::Mouse::getPosition(obj);
 }
 
 
