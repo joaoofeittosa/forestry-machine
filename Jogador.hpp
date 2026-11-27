@@ -9,9 +9,15 @@ class Jogador : public Personagem {
 private:
     int pontos;
     bool segundo;
+    bool noChao;
+    bool cimaPressionada;
+    float yAnterior;
     sf::Texture textura;
     sf::RectangleShape figuraVisual;
     static const float VELOCIDADE;
+    static const float GRAVIDADE;
+    static const float IMPULSO_PULO;
+    static const float VELOCIDADE_MAX_QUEDA;
 
 public:
     explicit Jogador(sf::Vector2f posicao = sf::Vector2f(0.f, 0.f),
@@ -21,7 +27,9 @@ public:
     void executar();
     void desenhar() override;
     void salvar();
-    void mover();
+    void mover() override;
+    void setNoChao(bool valor);
+    float getYAnterior() const;
 };
 
 }

@@ -1,4 +1,5 @@
 #include "chao.hpp"
+#include "Jogador.hpp"
 #include <algorithm>
 
 namespace forestry
@@ -31,12 +32,19 @@ namespace forestry
                 continue;
             }
 
-            const sf::Vector2f  TamanhoJanela = sf::Vector2f(260.f, 260.f); // Example window size
-                entidade->getFigura()->getLocalBounds().size;
+            const sf::Vector2f tamanhoFigura =
+                entidade->getFigura()->getGlobalBounds().size;
             sf::Vector2f posicao = entidade->getPosicao();
+            const float margemInferior = 40.f;
 
-            const float maxX = std::max(x, x + largura - TamanhoJanela.x);
-            const float maxY = std::max(y, y + altura - TamanhoJanela.y);
+            const float maxX = std::max(x, x + largura - tamanhoFigura.x);
+            const float maxY = std::max(
+                y, y + altura - tamanhoFigura.y - margemInferior);
+            if (posicao.y >= maxY) {
+                if (Jogador* jogador = dynamic_cast<Jogador*>(entidade)) {
+                    jogador->setNoChao(true);
+                }
+            }
             posicao.x = std::clamp(posicao.x, x, maxX);
             posicao.y = std::clamp(posicao.y, y, maxY);
 

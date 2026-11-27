@@ -146,12 +146,12 @@ void Jogo::executar()
         if (!jogando) {
             pMenu->executar();
         } else {
-            pFase->executar();
-
             pJog1->executar();
             if (pJog2) {
                 pJog2->executar();
             }
+
+            pFase->executar();
 
             const sf::Vector2u tamanhoJanela = GG.getTamanhoJanela();
             pChao->definirLimites(

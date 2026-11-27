@@ -1,5 +1,9 @@
 #include "Fase.hpp"
 
+#include "Inimigo.hpp"
+#include "Obstaculo.hpp"
+#include "Projetil.hpp"
+
 #include <filesystem>
 #include <fstream>
 #include <iostream>
@@ -30,6 +34,7 @@ void Fase::executar()
         pEl = pProx;
     }
 
+    gerenciadorColisoes.executar();
     listaEntidades.desenharTudo();
 }
 
@@ -68,11 +73,32 @@ void Fase::incluirEntidade(Entidade* pE)
 {
     if (!pE) return;
     listaEntidades.incluir(pE);
+
+    if (Inimigo* pInimigo = dynamic_cast<Inimigo*>(pE)) {
+        gerenciadorColisoes.incluirInimigo(pInimigo);
+    }
+    if (Obstaculo* pObstaculo = dynamic_cast<Obstaculo*>(pE)) {
+        gerenciadorColisoes.incluirObstaculo(pObstaculo);
+    }
+    if (Projetil* pProjetil = dynamic_cast<Projetil*>(pE)) {
+        gerenciadorColisoes.incluirProjetil(pProjetil);
+    }
 }
 
 void Fase::removerEntidade(Entidade* pE)
 {
     if (!pE) return;
+
+    if (Inimigo* pInimigo = dynamic_cast<Inimigo*>(pE)) {
+        gerenciadorColisoes.removerInimigo(pInimigo);
+    }
+    if (Obstaculo* pObstaculo = dynamic_cast<Obstaculo*>(pE)) {
+        gerenciadorColisoes.removerObstaculo(pObstaculo);
+    }
+    if (Projetil* pProjetil = dynamic_cast<Projetil*>(pE)) {
+        gerenciadorColisoes.removerProjetil(pProjetil);
+    }
+
     listaEntidades.remover(pE);
 }
 

@@ -4,7 +4,7 @@
 #include "Ente.hpp"
 #include "ListaEntidades.hpp"
 #include "Gerenciador_grafico.hpp"
-/*#include "GerenciadorColisoes.hpp"*/
+#include "Gerenciador_Colisoes.hpp"
 #include "Entidade.hpp"
 
 namespace forestry {
@@ -13,7 +13,7 @@ namespace forestry {
     protected:
         ListaEntidades listaEntidades;
         std::string nomeFase;
-        // GerenciadorColisoes gerenciadorColisoes;
+        GerenciadorColisoes gerenciadorColisoes;
 
     public:
         Fase(const std::string& nome);
